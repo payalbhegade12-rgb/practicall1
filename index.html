@@ -1,110 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopNow</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Mini e‑Commerce Demo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { line-height: 1.6; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #333; color: #fff; }
+    .logo { font-size: 1.5rem; }
+    nav ul { display: flex; gap: 1rem; }
+    nav a { color: #fff; text-decoration: none; }
+    .menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: #fff; cursor: pointer; }
+    .hero { padding: 2rem; text-align: center; background: #f4f4f4; }
+    .hero h1 { margin-bottom: .5rem; }
+    .btn { display: inline-block; padding: .5rem 1rem; background: #007BFF; color: #fff; text-decoration:none; border-radius: 4px; margin-top: .5rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; padding: 1rem; }
+    .product-card { border: 1px solid #ddd; padding: 1rem; text-align: center; }
+    .product-card img { width: 100%; height: auto; }
+    .add-to-cart { background: #28a745; color: #fff; padding: .5rem; border: none; border-radius: 4px; cursor: pointer; }
+    footer { text-align: center; padding: 1rem; background: #333; color: #fff; margin-top: 2rem; }
+    @media (max-width: 768px) {
+      nav ul { display: none; flex-direction: column; background: #444; position: absolute; top: 60px; right: 0; width: 200px; }
+      nav ul.show { display: flex; }
+      .menu-toggle { display: block; }
+    }
+  </style>
 </head>
 <body>
-  <style>
-
-    /* Reset & Variables */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --primary-color: #ff6f61; --text-color: #333; }
-
-/* Base Styling */
-body { font-family: Arial, sans-serif; color: var(--text-color); line-height: 1.6; }
-
-/* Header */
-header {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px; background: #f4f4f4;
-}
-.nav-links { display: flex; gap: 20px; }
-.menu-toggle { display: none; }
-
-/* Hero Section */
-.hero { text-align: center; padding: 40px 20px; background: #e0f7fa; }
-.hero .btn {
-  background: var(--primary-color); color: #fff;
-  padding: 10px 20px; text-decoration: none; border-radius: 5px;
-}
-
-/* Product Grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px; padding: 40px;
-}
-.product-card {
-  border: 1px solid #ccc; padding: 20px; text-align: center;
-}
-
-/* Footer */
-footer { text-align: center; padding: 20px; background: #f4f4f4; }
-
-/* Responsive Breakpoint */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .menu-toggle { display: block; }
-  .nav-links.show { display: flex; flex-direction: column; gap: 10px; }
-}
-
-  </style>
-  <!-- Header -->
   <header>
-    <div class="logo">ShopNow</div>
+    <div class="logo">ShopDemo</div>
+    <button class="menu-toggle">☰</button>
     <nav>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#cart">Cart</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Cart</a></li>
       </ul>
-      <button class="menu-toggle">☰</button>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>Shop the Latest Deals</h1>
-    <p>Trendy, responsive, and fast-loading products.</p>
-    <a href="#products" class="btn">Start Shopping</a>
+    <h1>Welcome to ShopDemo</h1>
+    <p>Check out our featured products</p>
+    <a href="#products" class="btn">Shop Now</a>
   </section>
 
-  <!-- Products -->
   <section id="products" class="product-grid">
     <div class="product-card">
-      <img src="images/product1.jpg" alt="Product 1" />
+      <img src="https://via.placeholder.com/200" alt="Product 1" />
       <h3>Product 1</h3>
       <p>$19.99</p>
       <button class="add-to-cart">Add to Cart</button>
     </div>
-    <!-- Repeat for additional products -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 2" />
+      <h3>Product 2</h3>
+      <p>$29.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 3" />
+      <h3>Product 3</h3>
+      <p>$39.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 4" />
+      <h3>Product 4</h3>
+      <p>$49.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 ShopNow. All rights reserved.</p>
+    <p>&copy; 2025 ShopDemo. All rights reserved.</p>
   </footer>
 
-  <script src="js/script.js">
-    // Mobile menu toggle
-document.querySelector(".menu-toggle").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("show");
-});
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
 
-// Simple add-to-cart alert
-let cartCount = 0;
-document.querySelectorAll(".add-to-cart").forEach(button => {
-  button.addEventListener("click", () => {
-    cartCount++;
-    alert(`Item added! Cart count: ${cartCount}`);
-  });
-});
-
+    let cartCount = 0;
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        cartCount++;
+        alert('Added to cart! Total items: ' + cartCount);
+      });
+    });
   </script>
 </body>
-
-
 </html>
