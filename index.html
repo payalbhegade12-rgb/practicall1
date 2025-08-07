@@ -7,45 +7,9 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">ShopNow</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#cart">Cart</a></li>
-      </ul>
-      <button class="menu-toggle">☰</button>
-    </nav>
-  </header>
+  <style>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Shop the Latest Deals</h1>
-    <p>Trendy, responsive, and fast-loading products.</p>
-    <a href="#products" class="btn">Start Shopping</a>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="product-grid">
-    <div class="product-card">
-      <img src="images/product1.jpg" alt="Product 1" />
-      <h3>Product 1</h3>
-      <p>$19.99</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <!-- Repeat for additional products -->
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 ShopNow. All rights reserved.</p>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
-  /* Reset & Variables */
+    /* Reset & Variables */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root { --primary-color: #ff6f61; --text-color: #333; }
 
@@ -87,7 +51,45 @@ footer { text-align: center; padding: 20px; background: #f4f4f4; }
   .nav-links.show { display: flex; flex-direction: column; gap: 10px; }
 }
 
-  // Mobile menu toggle
+  </style>
+  <!-- Header -->
+  <header>
+    <div class="logo">ShopNow</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#cart">Cart</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Shop the Latest Deals</h1>
+    <p>Trendy, responsive, and fast-loading products.</p>
+    <a href="#products" class="btn">Start Shopping</a>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="product-grid">
+    <div class="product-card">
+      <img src="images/product1.jpg" alt="Product 1" />
+      <h3>Product 1</h3>
+      <p>$19.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <!-- Repeat for additional products -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ShopNow. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js">
+    // Mobile menu toggle
 document.querySelector(".menu-toggle").addEventListener("click", () => {
   document.querySelector(".nav-links").classList.toggle("show");
 });
@@ -100,5 +102,9 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
     alert(`Item added! Cart count: ${cartCount}`);
   });
 });
+
+  </script>
+</body>
+
 
 </html>
