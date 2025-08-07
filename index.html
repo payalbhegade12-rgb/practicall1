@@ -45,4 +45,60 @@
 
   <script src="js/script.js"></script>
 </body>
+  /* Reset & Variables */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary-color: #ff6f61; --text-color: #333; }
+
+/* Base Styling */
+body { font-family: Arial, sans-serif; color: var(--text-color); line-height: 1.6; }
+
+/* Header */
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px; background: #f4f4f4;
+}
+.nav-links { display: flex; gap: 20px; }
+.menu-toggle { display: none; }
+
+/* Hero Section */
+.hero { text-align: center; padding: 40px 20px; background: #e0f7fa; }
+.hero .btn {
+  background: var(--primary-color); color: #fff;
+  padding: 10px 20px; text-decoration: none; border-radius: 5px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; padding: 40px;
+}
+.product-card {
+  border: 1px solid #ccc; padding: 20px; text-align: center;
+}
+
+/* Footer */
+footer { text-align: center; padding: 20px; background: #f4f4f4; }
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  .nav-links.show { display: flex; flex-direction: column; gap: 10px; }
+}
+
+  // Mobile menu toggle
+document.querySelector(".menu-toggle").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("show");
+});
+
+// Simple add-to-cart alert
+let cartCount = 0;
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    cartCount++;
+    alert(`Item added! Cart count: ${cartCount}`);
+  });
+});
+
 </html>
